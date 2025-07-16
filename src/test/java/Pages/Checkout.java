@@ -53,6 +53,10 @@ public class Checkout {
     {
         return hooks.driver.findElement(By.xpath("//select[@id=\"ExpireYear\"]"));
     }
+    public WebElement Card_Code()
+    {
+        return hooks.driver.findElement(By.xpath("//input[@id=\"CardCode\"]"));
+    }
     public WebElement continue_ToConfirmOrder()
     {
         return hooks.driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div/div/div[2]/ol/li[5]/div[2]/div/input"));

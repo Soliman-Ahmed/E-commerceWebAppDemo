@@ -83,7 +83,7 @@ public class checkout_confirmation {
         month.selectByValue("12");
         Select year = new Select(check_order.select_Expireyear());
         year.selectByVisibleText("2026");
-        check_order.
+        check_order.Card_Code().sendKeys("");
 
     }
 
