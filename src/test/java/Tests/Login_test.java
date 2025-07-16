@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 public class Login_test {
     Login_Page login = new Login_Page();
-    @Given("User Click on Login button")
+    @Given("Click on Login button")
     public void HomePage ()
     {
         boolean home = login.Home().isDisplayed();
@@ -37,7 +37,7 @@ public class Login_test {
         Assert.assertTrue(success);
         System.out.println("Login successfully");
     }
-    @Given("Click on Login button")
+    @Given("tap on Login button")
     public void homepage()
     {
         boolean home = login.Home().isDisplayed();

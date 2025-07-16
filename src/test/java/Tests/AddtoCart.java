@@ -16,7 +16,7 @@ public class AddtoCart {
     AddToCart add = new AddToCart();
     Login_Page login = new Login_Page();
     WebDriverWait wait= new WebDriverWait(hooks.driver, Duration.ofSeconds(10));
-    @Given("Open the web home page")
+    @Given("home page")
     public void open_home_page()
     {
         boolean home = login.Home().isDisplayed();

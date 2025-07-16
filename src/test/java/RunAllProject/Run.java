@@ -4,7 +4,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions
         (
                 features = "src/main/resources/Feature files",
-                glue = {"org.example.Tests"},
+                glue = {"Tests"},
                 plugin = {"pretty","html:target/report.html "}
 
         )
