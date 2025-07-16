@@ -5,6 +5,7 @@ import Pages.Login_Page;
 import Pages.AddToCart;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -77,15 +78,26 @@ public class checkout_confirmation {
         check_order.Select_cridt_card().click();
         check_order.continue_payment_info().click();
         wait.until(ExpectedConditions.visibilityOf(check_order.Card_holder_name()));
-        check_order.Card_holder_name().sendKeys("");
-        check_order.Card_number().sendKeys("");
+        check_order.Card_holder_name().sendKeys("Ahmed Khaled");
+        check_order.Card_number().sendKeys("4111111111111111");
         Select month =new Select(check_order.select_ExpireMonth());
         month.selectByValue("12");
         Select year = new Select(check_order.select_Expireyear());
         year.selectByVisibleText("2026");
-        check_order.Card_Code().sendKeys("");
-
+        check_order.Card_Code().sendKeys("123");
+        check_order.continue_ToConfirmOrder().click();
     }
-
+    @Then("Assert that the order Placed Successfully")
+    public void Order_confirmation ()
+    {
+        wait.until(ExpectedConditions.visibilityOf(check_order.confirm_total()));
+        System.out.println("Grand Total is : " + check_order.confirm_total().getText());
+        check_order.continue_to_Confirm().click();
+        wait.until(ExpectedConditions.visibilityOf(check_order.thanks_msg()));
+        boolean thanks_msg = check_order.thanks_msg().isDisplayed();
+        String order_number = check_order.order_number().getText();
+        System.out.println("order number is : " + order_number);
+        Assert.assertTrue(thanks_msg);
+    }
 
 }
