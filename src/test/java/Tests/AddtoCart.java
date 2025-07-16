@@ -51,8 +51,8 @@ public class AddtoCart {
     public void product_added()
     {
         wait.until(ExpectedConditions.visibilityOf(add.Confirm_msg()));
-        boolean cofirm_msg = add.Confirm_msg().isDisplayed();
-        Assert.assertTrue(cofirm_msg);
+        boolean confirm_msg = add.Confirm_msg().isDisplayed();
+        Assert.assertTrue(confirm_msg);
         String msg = add.Confirm_msg().getText();
         System.out.println(msg);
         wait.until(ExpectedConditions.visibilityOf(add.CartQty()));

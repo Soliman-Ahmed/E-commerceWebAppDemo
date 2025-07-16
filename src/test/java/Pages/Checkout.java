@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class Checkout {
-    public WebElement checkoutbtn ()
+    public WebElement checkout_btn ()
     {
         return hooks.driver.findElement(By.xpath("//button[@id=\"checkout\"]"));
     }
-    public WebElement tirmsCheckBox ()
+    public WebElement termsCheckBox ()
     {
         return hooks.driver.findElement(By.xpath("//input[@id=\"termsofservice\"]"));
     }
