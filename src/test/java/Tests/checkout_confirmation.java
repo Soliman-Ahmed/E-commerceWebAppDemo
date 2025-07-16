@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -75,7 +76,15 @@ public class checkout_confirmation {
         wait.until(ExpectedConditions.visibilityOf(check_order.Select_cridt_card()));
         check_order.Select_cridt_card().click();
         check_order.continue_payment_info().click();
-        
+        wait.until(ExpectedConditions.visibilityOf(check_order.Card_holder_name()));
+        check_order.Card_holder_name().sendKeys("");
+        check_order.Card_number().sendKeys("");
+        Select month =new Select(check_order.select_ExpireMonth());
+        month.selectByValue("12");
+        Select year = new Select(check_order.select_Expireyear());
+        year.selectByVisibleText("2026");
+        check_order.
+
     }
 
 
